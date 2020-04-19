@@ -1,0 +1,1 @@
+web: gunicorn COVID-19-Clinical-Tritals.app:app
