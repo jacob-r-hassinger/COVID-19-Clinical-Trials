@@ -12,6 +12,6 @@ def gatherData():
             # build up the dictionary
             d = {**d, **{column: value}}
             results.append(d)
-        connection.close()
+    connection.close()
     json_result = jsonify(results)
     return json_result

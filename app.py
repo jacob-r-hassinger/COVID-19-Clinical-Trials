@@ -12,7 +12,7 @@ app = Flask(__name__)
 @app.route("/")
 def index():
     data = gatherData()
-    return render_template("index.html", data=data)
+    return render_template("C:/COVID-19/COVID-19-Clinical-Trials/static/index.html", data=data)
 
 if __name__ == "__main__":
     app.run(debug=True)
