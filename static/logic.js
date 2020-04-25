@@ -10,22 +10,16 @@ var data = [clinicalTrials];
 console.log(data);
 
 // Create empty arrays to store the latitude
-var lat = [];
-
-
-// Iterate through each data object
-data.forEach((datapoint) => {
-
-  // Iterate through each key and value
-  Object.entries(datapoint).forEach(([key, value]) => {
-
-    // Use the key to determine which array to push the value to
-    if (key === "latitude") {
-      lat.push(value);
-    }
-    
-   });
-});
+lats = []; 
+longs = [];
+names = [];
+titles = [];
+for (i = 0; i < clinicalTrials.length; i++) {
+  lats.push(clinicalTrials[i]["latitude"]);
+  longs.push(clinicalTrials[i]["longitude"]);
+  titles.push(clinicalTrials[i]["brieftitle"]);
+  names.push(clinicalTrials[i]["facility"]);
+};
 
 // Use map to build array
 var latMapped = data.map(datapoint => data.latitude);
