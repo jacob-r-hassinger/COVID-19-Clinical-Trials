@@ -5,7 +5,7 @@ var gl = L.mapboxGL({
   }).addTo(map)
 
 
-var data = clinicalTrials;
+var data = [clinicalTrials];
 // console.log(Object.entries(data));
 console.log(data);
 
