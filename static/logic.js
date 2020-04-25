@@ -14,11 +14,15 @@ lats = [];
 longs = [];
 names = [];
 titles = [];
+statuses = [];
+phases = [];
 for (i = 0; i < clinicalTrials.length; i++) {
   lats.push(clinicalTrials[i]["latitude"]);
   longs.push(clinicalTrials[i]["longitude"]);
   titles.push(clinicalTrials[i]["brieftitle"]);
   names.push(clinicalTrials[i]["facility"]);
+  statuses.push(clinicalTrials[i]["overallstatus"]);
+  phases.push(clinicalTrials[i]["phase"]);
 };
 
 // Use map to build array

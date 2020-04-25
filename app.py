@@ -8,7 +8,7 @@ def index():
     engine = db.create_engine('sqlite:///COVID-Clinical-Trials.sqlite')
     #metadata = db.MetaData()
     connection = engine.connect()
-    query = connection.execute("SELECT DISTINCT c.nctid, c.brieftitle, c.facility, c.contactname, c.contactphone, c.contactemail, c.enrollmentcount, c.locationstate, l.latitude, l.longitude FROM COVID_ClinicalTrials as c INNER JOIN lat_long as l on c.locationzip = l.locationzip")
+    query = connection.execute("SELECT DISTINCT c.nctid, c.brieftitle, c.facility, c.overallstatus, c.contactname, c.contactphone, c.contactemail, c.enrollmentcount, c.locationstate, l.latitude, l.longitude, p.phase FROM COVID_ClinicalTrials as c INNER JOIN lat_long as l on c.locationzip = l.locationzip INNER JOIN Phase_Recordings as p on c.nctid = p.nctid")
     d, results = {}, []
     for rowproxy in query:
         # rowproxy.items() returns an array like [(key0, value0), (key1, value1)] > thank you stackoverflow!
