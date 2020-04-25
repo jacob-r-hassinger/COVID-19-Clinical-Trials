@@ -10,15 +10,11 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <!-- Leaflet CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
-    integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
-    crossorigin="" />
-  <!-- Leaflet JS -->
-  <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
-    integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
-    crossorigin=""></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/leaflet.css" /> 
+  <link rel="stylesheet" href="https://cdn.maptiler.com/mapbox-gl-js/v1.5.1/mapbox-gl.css" />
 
-  <!-- flask app JS; with another thank you to Stack Overflow to assign the data from flask into a js variable (https://stackoverflow.com/questions/15321431/how-to-pass-a-list-from-python-by-jinja2-to-javascript) -->
+
+  <!--flask app JS; with another thank you to Stack Overflow to assign the data from flask into a js variable (https://stackoverflow.com/questions/15321431/how-to-pass-a-list-from-python-by-jinja2-to-javascript) -->
   <script>
     var clinicalTrials = {{ data | tojson }};
   </script>
@@ -68,7 +64,6 @@
       </div>
       <div class="col-9">
         <div id="map">
-          <iframe width="826" height="600" src="https://api.maptiler.com/maps/3d26a01e-f289-425f-b403-d7737e1ae42f/?key=G18kR4B5cKkYaH1F1cW3#3.1/39.21404/-92.04529"></iframe>
         </div>
       </div>
     </div>
@@ -94,9 +89,16 @@
       $("#accordion").accordion();
     });
   </script>
-  <script type="text/javascript" src="static/logic.js"></script>
+  <!-- Javascript for Maptiler -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/leaflet.js"></script>
+  <script src="https://cdn.maptiler.com/mapbox-gl-js/v1.5.1/mapbox-gl.js"></script>
+  <script src="https://cdn.maptiler.com/mapbox-gl-leaflet/latest/leaflet-mapbox-gl.js"></script> 
+
+
   <script type="text/javascript" src="static/config.js"></script>
+  <script type="text/javascript" src="static/logic.js"></script>
 
 </body>
+
 
 </html>
