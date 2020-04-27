@@ -10,7 +10,7 @@ L.tileLayer('https://api.maptiler.com/maps/positron/{z}/{x}/{y}.png?key=G18kR4B5
 
 
 
-var data = clinicalTrials;
+var data = clinicalTrials[0];
 console.log(data);
 
 
