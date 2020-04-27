@@ -1,41 +1,33 @@
 
+var map = L.map("map").setView([35, -99], 4.3);
+
+// Add a tile layer
+L.tileLayer('https://api.maptiler.com/maps/positron/{z}/{x}/{y}.png?key=G18kR4B5cKkYaH1F1cW3',
+{attribution:'<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
+}
+).addTo(map)
 
 
 
 
-var data = [clinicalTrials];
-  // console.log(Object.entries(data));
-  console.log(data);
+var data = clinicalTrials;
+console.log(data);
 
 
-// for (var i = 0; i < data.length; i++) {
-//     var covid = data[i];
-//     L.marker(covid.latitude, covid.longitude)
-//       .bindPopup("<h1>" + covid.facility + "</h1> <hr> <h3>Population " + covid.brieftitle + "</h3>")
-//       .addTo(map);
-//   }
+var markerClusters = L.markerClusterGroup();
 
-// Create empty arrays to store the latitude
-lats = [];
-longs = [];
-names = [];
-titles = [];
-for (i = 0; i < clinicalTrials.length; i++) {
-    lats.push(clinicalTrials[i]["latitude"]);
-    longs.push(clinicalTrials[i]["longitude"]);
-    titles.push(clinicalTrials[i]["brieftitle"]);
-    names.push(clinicalTrials[i]["facility"]);
-};
+for (var i = 0; i < data.length; ++i) {
+  var popup = data[i].facility +
+    '<br/><b>Brief Title:<b>' + data[i].brieftitle +
+    '<br/><b>Enrollment Count:</b> ' + data[i].enrollmentcount +
+    '<br/><b>Contact Name:</b> ' + data[i].contactname +
+    '<br/><b>Contact Phone:</b> ' + data[i].contactphone;
 
 
-var gl = L.mapboxGL({
-  attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>',
-  accessToken: 'not-needed',
-  style: 'https://api.maptiler.com/maps/3d26a01e-f289-425f-b403-d7737e1ae42f/style.json?key=G18kR4B5cKkYaH1F1cW3'
-}).addTo(map)
+  var m = L.marker([data[i].latitude, data[i].longitude])
+    .bindPopup(popup);
 
-var marker = L.marker([lats, longs], {
-    draggable: true,
-    title: "My First Marker"
-}).addTo(map);
+  markerClusters.addLayer(m);
+}
 
+map.addLayer(markerClusters);
