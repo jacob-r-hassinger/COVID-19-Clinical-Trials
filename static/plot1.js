@@ -17,7 +17,7 @@ var trace1 = {
 var data = [trace1];
 
 var layout = {
-  title: "Count of Clinical Trials per State"
+  margin: {l:20, r:20, t:15}
 };
 
 Plotly.newPlot("plot1", data, layout, {responsive: true});
