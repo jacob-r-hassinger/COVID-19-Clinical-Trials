@@ -1,9 +1,18 @@
 var plotdata = clinicalTrials[1];
 console.log(plotdata)
 
+yVals = [];
+xVals = [];
+
+for (var i = 0; i < plotdata.length; ++i) {
+  yVals.push(plotdata[i]["count"]);
+  xVals.push(plotdata[i]["locationstate"]);
+  console.log((plotdata[i]["locationstate"]))
+};
+
 var trace1 = {
-  x: [],
-  y: [],
+  x: xVals,
+  y: yVals,
   type: "bar"
 };
 
