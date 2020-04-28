@@ -20,4 +20,4 @@ var layout = {
   title: "Count of Clinical Trials per State"
 };
 
-Plotly.newPlot("plot1", data, layout);
+Plotly.newPlot("plot1", data, layout, {responsive: true});
