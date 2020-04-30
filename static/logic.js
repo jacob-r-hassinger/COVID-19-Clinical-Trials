@@ -11,7 +11,6 @@ L.tileLayer('https://api.maptiler.com/maps/positron/{z}/{x}/{y}.png?key=G18kR4B5
 
 
 var data = clinicalTrials[0];
-console.log(data);
 
 var myURL = ("https://i.ibb.co/VNqwM47/icon-512x512-2x.png")
 
