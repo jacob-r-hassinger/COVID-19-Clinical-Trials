@@ -10,7 +10,7 @@ def index():
     connection = engine.connect()
     query = connection.execute("SELECT DISTINCT c.nctid, c.brieftitle, c.facility, c.overallstatus, c.contactname, c.contactphone, c.contactemail, c.enrollmentcount, c.locationstate, l.latitude, l.longitude, p.phase FROM COVID_ClinicalTrials as c INNER JOIN lat_long as l on c.locationzip = l.locationzip INNER JOIN Phase_Recordings as p on c.nctid = p.nctid")
     plotquery = connection.execute("SELECT c.locationstate, count(c.locationstate) as count FROM COVID_ClinicalTrials as c GROUP BY c.locationstate")
-    plotquery2 = connection.execute("SELECT p.phase, count(p.phase) as count FROM Phase_Recordings as p GROUP BY p.phase")
+    plotquery2 = connection.execute("SELECT p.phase, count(p.phase) as count FROM Phase_Recordings as p GROUP BY p.phase ORDER BY p.phase")
 
     querylist = [query, plotquery, plotquery2]
     sourcedata = []
