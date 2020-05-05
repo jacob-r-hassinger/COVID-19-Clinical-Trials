@@ -1,5 +1,4 @@
 var plotdata2 = clinicalTrials[2];
-console.log(plotdata2);
 
 count = [];
 phase = [];
