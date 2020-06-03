@@ -1,5 +1,17 @@
 
-var map = L.map("map").setView([35, -99], 4.3);
+// var map = L.map("map", {
+//   center: [10.0, 5.0],
+//   minZoom: 2,
+//   zoom: 2
+// }).setView([35, -99], 4.3);
+
+
+var map = L.map("map", {
+  center: [10.0, 5.0],
+  minZoom: 2,
+  zoom: 2
+});
+
 
 // Add a tile layer
 L.tileLayer('https://api.maptiler.com/maps/positron/{z}/{x}/{y}.png?key=G18kR4B5cKkYaH1F1cW3',
