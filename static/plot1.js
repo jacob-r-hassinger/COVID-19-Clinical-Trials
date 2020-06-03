@@ -5,7 +5,7 @@ xVals = [];
 
 for (var i = 0; i < plotdata.length; ++i) {
   yVals.push(plotdata[i]["count"]);
-  xVals.push(plotdata[i]["locationstate"]);
+  xVals.push(plotdata[i]["locationcountry"]);
 };
 
 var trace1 = {
