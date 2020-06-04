@@ -24,7 +24,6 @@ var data = [trace1];
 
 var layout = {
   margin: {l:20, r:20, t:15},
-  title: 'Global Font',
   font: {
     size: 9,
     color: '#7f7f7f'
