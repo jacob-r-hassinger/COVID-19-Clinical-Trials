@@ -1,3 +1,5 @@
+
+
 var plotdata = clinicalTrials[1];
 
 yVals = [];
@@ -11,13 +13,28 @@ for (var i = 0; i < plotdata.length; ++i) {
 var trace1 = {
   x: xVals,
   y: yVals,
-  type: "bar"
+  type: "bar",
+  text: [xVals, yVals],
+  textposition: 'bottom',
+  
+
 };
 
 var data = [trace1];
 
 var layout = {
-  margin: {l:20, r:20, t:15}
+  margin: {l:20, r:20, t:15},
+  title: 'Global Font',
+  font: {
+    size: 9,
+    color: '#7f7f7f'
+  }
 };
 
 Plotly.newPlot("plot1", data, layout, {responsive: true});
+
+
+
+
+
+
