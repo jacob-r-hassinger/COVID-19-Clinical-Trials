@@ -28,5 +28,9 @@ def index():
 
     return render_template("index.html", data=sourcedata)
 
+@app.route("/about-us")
+def about():
+    return render_template('aboutus.html')
+
 if __name__ == "__main__":
     app.run(debug=True)
