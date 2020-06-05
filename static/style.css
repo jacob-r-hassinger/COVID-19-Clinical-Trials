@@ -1,5 +1,6 @@
 #map { height: 450px;}
 #heading {font-size: 2rem; color: whitesmoke;}
+#photo { height: 450px}
 
 .marker-cluster-small {
     background-color: rgba(166, 189, 219, 0.6) !important;
@@ -27,3 +28,21 @@
   line-height: 20px;
   border-radius: 21px;
 }
+
+body, html {
+  height: 100%;
+}
+.bg {
+  /* The image used */
+  background-image: url("https://i.ibb.co/znRf1NH/dreamstimemaximum-179702434.jpg");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+

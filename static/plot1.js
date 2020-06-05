@@ -14,9 +14,6 @@ var trace1 = {
   x: xVals,
   y: yVals,
   type: "bar",
-  text: [xVals, yVals],
-  textposition: 'bottom',
-  
 
 };
 
