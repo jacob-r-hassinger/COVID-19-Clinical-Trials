@@ -14,6 +14,10 @@ var trace1 = {
   x: xVals,
   y: yVals,
   type: "bar",
+  marker: {
+    color: 'rgb(28, 144, 153)',
+    opacity: 0.6,
+  }
 
 };
 
@@ -30,7 +34,7 @@ var layout = {
 Plotly.newPlot("plot1", data, layout, {responsive: true});
 
 
-
+// gba(28, 144, 153, 0.6)
 
 
 
