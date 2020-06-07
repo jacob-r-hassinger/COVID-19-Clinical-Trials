@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>COVID-19 Clinical Trials Project</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Jquery UI CSS -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <!-- Minor mod to Jquery UI CSS -->
+  <link rel="stylesheet" type="text/css" href="../static/jquery-ui_theme_mod.css">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+    integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+    crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
+    integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
+    crossorigin=""></script>
+
+  <!-- Marker Cluster JS & CSS -->
+  <script type="text/javascript"
+    src="https://unpkg.com/leaflet.markercluster@1.0.3/dist/leaflet.markercluster.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.css">
+  <link rel="stylesheet" type="text/css"
+    href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.Default.css">
+
+  <body>
+
+  <nav class="navbar navbar-expand-lg" style="background-color: rgb(210, 219, 221);">
+    <img src="https://i.ibb.co/v3MpV44/icon-512x512-2x.png" alt="icon-512x512-2x" border="10" style="height: 40px; width: 40 px; padding-right: 16px;">
+    <!-- <h1 id="heading">COVID-19 Clinical Trials Taking Place Globally</h1> -->
+    <!-- <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search by State" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
+    <!-- <a class="navbar-brand" href="#">Navigation</a> -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="process"> Our Project
+          </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="process"> Clinical Trials Map
+            </a>
+          </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Machine Learning
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href              ="charts">Visualizations</a><a class="dropdown-item" href="sample output">Sample Output</a>
+          </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="process">About Us</a>
+        </li>
+      </ul>
+    </div>
+
+   
+ 
+  <!-- <div class="bg" style="padding-bottom: 20px; padding-top: 20px;"></div> -->
+</form>
+</nav>
+  <div class="container">
+    <div class="col-12" style="padding-bottom: 20px; padding-top: 10px;"></div>
+      <h2>About the COVID-19 Clinical Trials Project</h2>
+        <p>
+          The COVID-19 Clinical Trials Project was designed to give physicians and individuals a way to find COVID-19 trial information in a timely manner. 
+          We include an interactive map of the world that marks the locations of the different clincal trials and other clinical trial visualizations.
+          We continued our work by exploring the use of machine learning to help identify appropriate clinical trials for an individual.
+
+        </p>
+        <h4>The Clinical Trials Map</h4>
+        <p>
+          Our data was pulled from the clinicaltrials.gov website via the provided API, cleaned using a python script with pandas, and then inserted into a SQLite Database. 
+          The python script interacts with the Clinical Trials dataset, to handle a second API call using mapquest’s open API to gather coordinate points for each unique location in the database. 
+          The dataset is served to the user with a Flask app. 
+          The dataset was further manipulated with Javascript to prepare it for mapping. 
+          
+          The interactive map of the world that marks the locations of the different clincal trials. 
+          The map was built with Leaflet because of ability to provide interactivity. 
+          Zooming in on an area of the map brings up the specific locations. 
+          Clicking on one of these points, marked by a virus icon, brings up key information about the trial, including contact information. 
+          Other visualizations are provided that analyze aspects of the clinical trials. 
+
+          We provide two other visualizations of the clinical trial data. 
+          The JQuery Accordion enables the interactivity of switching between the two graphs, which were built using Plotly. 
+          As you click on a specific clinical trial location, a chart below is filled in with further details about the trial.
+          A bar chart shows the number of COVID-19 clinical trials per country. 
+          A pie chart shows the number of COVID-19 cliical trials per phase.
+          
+
+        </p>
+        <h4>Machine Learning</h4>
+        <p>
+          Machine Learning in practice involves five key steps: 1)Get the data, 2) Clean, prepare, and manipulate the data, 3) Train the model, 4) Test the data, and 5) Improve.
+          An exhaustive litereature research gave us the idea of using eligibility and exclusiion criteria in our machine learning effort. 
+          We decided to limit the scope of the project to those trials that involved drugs as interventions, and to further limit our data set to 5 the five drugs that are currently seen to show the most promise: 
+          Hydroxychloroquine (Plaquenil) and chloroquine (Aralen), Remdesivir, Favilavir, Lopinavir-ritonavir, Convalescent plasma. 
+          
+          We pulled the eligibility and exclusion criteria from the current set of clinical trials that contained these drugs in the clinical trial description and loaded them into the database. 
+          We prepared the data using pandas to remove extra words and created a csv file of lines of eligibility and exclusion criteris. 
+          We experimented with several data preparation methods including - Latent Dirichlet, Bag of Words and others until finally choosing Categorical Embedding. 
+          With Categorical Embedding we were able to create a real very integer number encoding. 
+          With neural networks, a hidden layer is located between the input and output of the algorithm, in which the function applies weights to the inputs and directs them through an activation function as the output. 
+          In short, the hidden layers perform nonlinear transformations of the inputs entered into the network. Our model used two hidden layers.
+          We created a test group and trained the neural network. We then did a test and created a variety of visualizations of the output.
+
+        </p>
+        <h4>Future Work</h4>
+        <p>
+        
+          A future project could be to create simple questionnaire to collect physical and medical responses from any anonymous individual that could be used to identify appropriate trials using the eligibility and elimination criteria built into our machine learning model.
+        </p>
+
+    </p>
+    <h4>Reference Articles</h4>
+    <p>
+        "A Machine Learning Approach to Identify Clinical Trials Involving Nanodrugs and Nanodevices from ClinicalTrials.gov", https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0110331
+        
+    </p> 
+    <p>
+        "Learning Eligibility in Cancer Clinical Trials Using Deep Neural Networks" from the MDPI Journal for Applied Sciences, available at arXiv.org.          
+    </p> 
+    <p> 
+        "Categorical Embedder: Encoding Categorical Variables via Neural Networks", https://medium.com/analytics-vidhya/categorical-embedder-encoding-categorical-variables-via-neural-networks-b482afb1409d
+    </p>  
+    <p>
+        "A Gentle Introduction to the Bag-of-Words Model", https://machinelearningmastery.com/gentle-introduction-bag-words-model/
+    </p>   
+    <p> 
+        "Topic Modeling in Python: Latent Dirichlet Allocation (LDA)", https://towardsdatascience.com/end-to-end-topic-modeling-in-python-latent-dirichlet-allocation-lda-35ce4ed6b3e0   
+    </p>
+
+      </div>
+    </div>
+  </div>
+  
+
+  
+</body>
+
+
+</html>
