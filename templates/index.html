@@ -38,8 +38,6 @@
     var clinicalTrials = {{ data | tojson }};
   </script>
 
-
-
   <title>COVID-19 Clinical Trials</title>
   <link rel="stylesheet" type="text/css" href="../static/style.css">
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
@@ -48,16 +46,40 @@
 <body>
   
   <nav class="navbar navbar-expand-lg" style="background-color: rgb(210, 219, 221);">
-    <img src="https://i.ibb.co/v3MpV44/icon-512x512-2x.png" alt="icon-512x512-2x" border="0" style="height: 40px; width: 40 px; padding-right: 16px;">
+    <img src="https://i.ibb.co/v3MpV44/icon-512x512-2x.png" alt="icon-512x512-2x" border="0" style="height: 40px; width: 60 px; padding-right: 16px;">
     <!-- <h1 id="heading">COVID-19 Clinical Trials Taking Place Globally</h1> -->
     <!-- <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search by State" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
+    <!-- <a class="navbar-brand" href="#">Navigation</a> -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="ourprocess"> Our Process</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="clinicaltrials"> Clinical Trials Map</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="machinelearning"> Machine Learning</a>
+          </li>
+        <li class="nav-item">
+            <a class="nav-link" href="aboutus">About Us</a>
+        </li>
+      </ul>
+    </div>
+    
     </form>
   </nav>
   <div class ="container">
     <div class ="row" >
-      <div class="col-12" style="padding-bottom: 20px; padding-top: 20px;">
+      <div class="col-12" style="padding-bottom: 10px; padding-top: 10px;">
         <div id = "photo">
           <div class = "bg" >
           </div> 
@@ -67,70 +89,4 @@
   </div>
 
 
-
-
-
-  <!-- <div class="bg" style="padding-bottom: 20px; padding-top: 20px;"></div> -->
-  <div class="container">
-    <div class="row">
-      <div class="col-12" style="padding-bottom: 20px; padding-top: 20px;">
-        <div id="map">
-        </div>
-      </div>
-    </div>
-    <div class="row" style="padding-bottom: 30px;">
-      <div class="col-6">
-        <div id="accordion" >
-          <h3>Count of Clinical Trials per Country</h3>
-          <div id="plot1">
-          </div>
-          <h3>Count of Clinical Trials per Phase</h3>
-          <div id="plot2">
-          </div>
-        </div>
-      </div>
-      <div class="col-6">
-        <div id="table">
-          <h2>About Us</h2>
-          <p>
-            The COVID-19 Clinical Trials Dashboard page connects curious users with the clinical trials related to COVID-19 that are registered throughout the United States.
-          </p>
-          <p>
-            It features an interactive map of the US that marks the locations of the different clinical trials. Zooming in on an area of the map brings up the specific points. Clicking on one of these points, marked by a virus icon, brings up key information about the trial, including contact information.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Javascript for Bootstrap -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
-  <!-- Javascript for JQuery -->
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <!-- script specific to accordion -->
-  <script>
-    $(function () {
-      $("#accordion").accordion();
-    });
-    $(".selector").accordion({
-      icons: { "header": "ui-icon-plus", "activeHeader": "ui-icon-minus" }
-    });
-  </script>
-
-  <script type="text/javascript" src="../static/logic.js"></script>
-  <script type="text/javascript" src="../static/plot1.js"></script>
-  <script type="text/javascript" src="../static/plot2.js"></script>
 </body>
-
-
-</html>
