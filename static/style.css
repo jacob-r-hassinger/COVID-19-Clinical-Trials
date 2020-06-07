@@ -2,6 +2,22 @@
 #heading {font-size: 2rem; color: whitesmoke;}
 #photo { height: 450px}
 
+.navbar {
+  letter-spacing: 4px;
+  line-height: 25px;
+  text-transform: uppercase;
+  background-color: #666;
+  border-radius: 4px;
+  margin-bottom: 0px;
+  font: "Poppins", serif; 
+}
+
+.nav .a:hover {background-color: #666;
+}
+
+.nav .current {background-color: white-space;
+}
+
 .marker-cluster-small {
     background-color: rgba(166, 189, 219, 0.6) !important;
     }
@@ -37,7 +53,7 @@ body, html {
   background-image: url("https://i.ibb.co/znRf1NH/dreamstimemaximum-179702434.jpg");
 
   /* Full height */
-  height: 100%;
+  height: 125%;
 
   /* Center and scale the image nicely */
   background-position: center;
