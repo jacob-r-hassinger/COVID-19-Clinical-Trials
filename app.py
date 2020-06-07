@@ -4,6 +4,10 @@ from flask import Flask, jsonify, render_template
 app = Flask(__name__)
 
 @app.route("/")
+def about():
+    return render_template('index.html')
+
+@app.route("/dashboard")
 def index():
     engine = db.create_engine('sqlite:///COVID-Clinical-Trials.sqlite')
     #metadata = db.MetaData()
@@ -26,11 +30,19 @@ def index():
         sourcedata.append(results)
     connection.close()
 
-    return render_template("index.html", data=sourcedata)
+    return render_template("clinicaltrials.html", data=sourcedata)
 
 @app.route("/about-us")
 def about():
     return render_template('aboutus.html')
+
+@app.route("/machine-learning")
+def about():
+    return render_template('machinelearning.html')
+
+@app.route("/our-project")
+def about():
+    return render_template('ourproject.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
