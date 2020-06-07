@@ -4,7 +4,7 @@ from flask import Flask, jsonify, render_template
 app = Flask(__name__)
 
 @app.route("/")
-def about():
+def home():
     return render_template('index.html')
 
 @app.route("/dashboard")
@@ -37,11 +37,11 @@ def about():
     return render_template('aboutus.html')
 
 @app.route("/machine-learning")
-def about():
+def machinelearning():
     return render_template('machinelearning.html')
 
 @app.route("/our-project")
-def about():
+def ourproject():
     return render_template('ourproject.html')
 
 if __name__ == "__main__":
