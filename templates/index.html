@@ -34,7 +34,7 @@
 
 
   <!--flask app JS; with another thank you to Stack Overflow to assign the data from flask into a js variable (https://stackoverflow.com/questions/15321431/how-to-pass-a-list-from-python-by-jinja2-to-javascript) -->
-  
+
 
   <title>COVID-19 Clinical Trials</title>
   <link rel="stylesheet" type="text/css" href="../static/style.css">
@@ -42,45 +42,49 @@
 </head>
 
 <body>
-  
+
   <nav class="navbar navbar-expand-lg" style="background-color: rgb(210, 219, 221);">
-    <img src="https://i.ibb.co/v3MpV44/icon-512x512-2x.png" alt="icon-512x512-2x" border="0" style="height: 40px; width: 60 px; padding-right: 16px;">
+    <img src="https://i.ibb.co/v3MpV44/icon-512x512-2x.png" alt="icon-512x512-2x" border="0"
+      style="height: 40px; width: 40 px; padding-right: 16px;">
     <!-- <h1 id="heading">COVID-19 Clinical Trials Taking Place Globally</h1> -->
     <!-- <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search by State" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
     <!-- <a class="navbar-brand" href="#">Navigation</a> -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
+        <li class="current"></li>
         <li class="nav-item">
-          <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="http://covid19clinicaltrials.herokuapp.com/">Home <span
+              class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="ourproject.html"> Our Process</a>
+          <a class="nav-link" href="http://covid19clinicaltrials.herokuapp.com/our-project"> Our Project</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="clinicaltrials.html"> Clinical Trials Map</a>
+          <a class="nav-link" href="http://covid19clinicaltrials.herokuapp.com/dashboard"> Clinical Trials Map</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="machinelearning.html"> Machine Learning</a>
+          <a class="nav-link" href="http://covid19clinicaltrials.herokuapp.com/machine-learning"> Machine Learning</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="aboutus.html">About Us</a>
+          <a class="nav-link" href="http://covid19clinicaltrials.herokuapp.com/about-us">About Us</a>
         </li>
       </ul>
     </div>
-    
     </form>
   </nav>
-  <div class ="container">
-    <div class ="row" >
+  
+  <div class="container">
+    <div class="row">
       <div class="col-12" style="padding-bottom: 10px; padding-top: 10px;">
-        <div id = "photo">
-          <div class = "bg" >
-          </div> 
+        <div id="photo">
+          <div class="bg">
+          </div>
         </div>
       </div>
     </div>

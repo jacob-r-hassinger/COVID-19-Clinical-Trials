@@ -44,37 +44,40 @@
 </head>
 
 <body>
-  
+
   <nav class="navbar navbar-expand-lg" style="background-color: rgb(210, 219, 221);">
-    <img src="https://i.ibb.co/v3MpV44/icon-512x512-2x.png" alt="icon-512x512-2x" border="0" style="height: 40px; width: 40 px; padding-right: 16px;">
+    <img src="https://i.ibb.co/v3MpV44/icon-512x512-2x.png" alt="icon-512x512-2x" border="0"
+      style="height: 40px; width: 40 px; padding-right: 16px;">
     <!-- <h1 id="heading">COVID-19 Clinical Trials Taking Place Globally</h1> -->
     <!-- <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search by State" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
     <!-- <a class="navbar-brand" href="#">Navigation</a> -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
+        <li class="current"></li>
         <li class="nav-item">
-          <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="http://covid19clinicaltrials.herokuapp.com/">Home <span
+              class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="ourproject.html"> Our Process</a>
+          <a class="nav-link" href="http://covid19clinicaltrials.herokuapp.com/our-project"> Our Project</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="clinicaltrials.html"> Clinical Trials Map</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="machinelearning.html">Machine Learning</a>
+          <a class="nav-link" href="http://covid19clinicaltrials.herokuapp.com/dashboard"> Clinical Trials Map</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="aboutus.html">About Us</a>
+          <a class="nav-link" href="http://covid19clinicaltrials.herokuapp.com/machine-learning"> Machine Learning</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="http://covid19clinicaltrials.herokuapp.com/about-us">About Us</a>
         </li>
       </ul>
     </div>
-    
     </form>
   </nav>
 
@@ -88,7 +91,7 @@
     </div>
     <div class="row" style="padding-bottom: 30px;">
       <div class="col-6">
-        <div id="accordion" >
+        <div id="accordion">
           <h3>Count of Clinical Trials per Country</h3>
           <div id="plot1">
           </div>
@@ -101,10 +104,13 @@
         <div id="table">
           <h2>About Us</h2>
           <p>
-            The COVID-19 Clinical Trials Dashboard page connects curious users with the clinical trials related to COVID-19 that are registered throughout the United States.
+            The COVID-19 Clinical Trials Dashboard page connects curious users with the clinical trials related to
+            COVID-19 that are registered throughout the United States.
           </p>
           <p>
-            It features an interactive map of the US that marks the locations of the different clinical trials. Zooming in on an area of the map brings up the specific points. Clicking on one of these points, marked by a virus icon, brings up key information about the trial, including contact information.
+            It features an interactive map of the US that marks the locations of the different clinical trials. Zooming
+            in on an area of the map brings up the specific points. Clicking on one of these points, marked by a virus
+            icon, brings up key information about the trial, including contact information.
           </p>
         </div>
       </div>

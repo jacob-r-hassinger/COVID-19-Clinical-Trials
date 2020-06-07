@@ -34,41 +34,44 @@
 
 
   <!--flask app JS; with another thank you to Stack Overflow to assign the data from flask into a js variable (https://stackoverflow.com/questions/15321431/how-to-pass-a-list-from-python-by-jinja2-to-javascript) -->
-  
+
   <title>COVID-19 Clinical Trials</title>
   <link rel="stylesheet" type="text/css" href="../static/style.css">
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 
 <body>
-  
+
   <nav class="navbar navbar-expand-lg" style="background-color: rgb(210, 219, 221);">
-    <img src="https://i.ibb.co/v3MpV44/icon-512x512-2x.png" alt="icon-512x512-2x" border="0" style="height: 40px; width: 40 px; padding-right: 16px;">
+    <img src="https://i.ibb.co/v3MpV44/icon-512x512-2x.png" alt="icon-512x512-2x" border="0"
+      style="height: 40px; width: 40 px; padding-right: 16px;">
     <!-- <h1 id="heading">COVID-19 Clinical Trials Taking Place Globally</h1> -->
     <!-- <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search by State" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
     <!-- <a class="navbar-brand" href="#">Navigation</a> -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
-        <li class= "current"></li> 
+        <li class="current"></li>
         <li class="nav-item">
-          <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="http://covid19clinicaltrials.herokuapp.com/">Home <span
+              class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="ourproject"> Our Project</a>
+          <a class="nav-link" href="http://covid19clinicaltrials.herokuapp.com/our-project"> Our Project</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="clinicaltrials.html"> Clinical Trials Map</a>
+          <a class="nav-link" href="http://covid19clinicaltrials.herokuapp.com/dashboard"> Clinical Trials Map</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="machinelearning.html"> Machine Learning</a>
+          <a class="nav-link" href="http://covid19clinicaltrials.herokuapp.com/machine-learning"> Machine Learning</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="aboutus.html">About Us</a>
+          <a class="nav-link" href="http://covid19clinicaltrials.herokuapp.com/about-us">About Us</a>
         </li>
       </ul>
     </div>
@@ -108,69 +111,84 @@
 
 </form>
 </nav>
-  <div class="container">
-    <div class="col-12" style="padding-bottom: 20px; padding-top: 10px;"></div>
-      <h2>Machine Learning</h2>
-        <p>
-          Machine Learning in practice involves five key steps: 1) Get the data, 2) Clean, prepare, and manipulate the data, 3) Train the model, 4) Test the data, and 5) Improve.
-          An exhaustive litereature research gave us the idea of using eligibility and exclusiion criteria in our machine learning effort. 
-          We decided to limit the scope of the project to those trials that involved drugs as interventions, and to further limit our data set to 5 the five drugs that are currently seen to show the most promise: 
-          Hydroxychloroquine (Plaquenil) and chloroquine (Aralen), Remdesivir, Favilavir, Lopinavir-ritonavir, Convalescent plasma. 
-          
-          We pulled the eligibility and exclusion criteria from the current set of clinical trials that contained these drugs in the clinical trial description and loaded them into the database. 
-          We prepared the data using pandas to remove extra words and created a csv file of lines of eligibility and exclusion criteris. 
-          We experimented with several data preparation methods including - Latent Dirichlet, Bag of Words and others until finally choosing Categorical Embedding. 
-          With Categorical Embedding we were able to create a real very integer number encoding. 
-          With neural networks, a hidden layer is located between the input and output of the algorithm, in which the function applies weights to the inputs and directs them through an activation function as the output. 
-          In short, the hidden layers perform nonlinear transformations of the inputs entered into the network. Our model used two hidden layers.
-          We created a test group and trained the neural network. We then did a test and created a variety of visualizations of the output.
-        </p>
-        <p>
-        <h4>Get the data</h4>
-        <p>
-            We decided to limit the scope of the project to those trials that involved drugs as interventions, and to further limit our data set to 5 the five drugs that are currently seen to show the most promise: 
-            Hydroxychloroquine (Plaquenil) and chloroquine (Aralen), Remdesivir, Favilavir, Lopinavir-ritonavir, Convalescent plasma. 
-            
-            We pulled the eligibility and exclusion criteria from the current set of clinical trials that contained these drugs in the clinical trial description and loaded them into the database.    
-        </p>
-        <p>
-        <a><img src="../static/images/drugtrials.png"></a>
-        </p>
-        <p>
-        <h4>Clean, prepare, and manipulate the data</h4>
-        <p>We then cleaned the data, taking out extra words, and removing fields.  Categorical emedding was used to encode the eligibility and exclusion criteria. Further manipulation using pandas was done to create the final data set for the neural network model.</p>
-        
-        <p>
-        <a><img src="../static/images/cleancriteria.png"></a>
-        </p>
-        <p>
-        <a><img src="../static/images/ce.png"></a>
-        </p>
-        <p>
-        <a><img src="../static/images/transform.png"></a>
-        </p>
-        <p>
-        <h4>Train the model</h4> 
-        <p>We chose a test set and then trained the model.</p>
-        
-        <p>
-        <a><img src="../static/images/modeltrain.png"></a>
-        </p>  
-        <p>
-        <a><img src="../static/images/training.png"></a>
-        </p>   
-        <p>
-        <h4>Test the data</h4>
-        <p>We tested the model for accuracy.
-        </p>
-        <p>
-        <a><img src="../static/images/checkmodelaccuracy.png"><a>
-        </p>
-        <p>
-        <h4>Improve</h4>
-      </div>
-    </div>
-  </div>
+<div class="container">
+  <div class="col-12" style="padding-bottom: 20px; padding-top: 10px;"></div>
+  <h2>Machine Learning</h2>
+  <p>
+    Machine Learning in practice involves five key steps: 1) Get the data, 2) Clean, prepare, and manipulate the data,
+    3) Train the model, 4) Test the data, and 5) Improve.
+    An exhaustive litereature research gave us the idea of using eligibility and exclusiion criteria in our machine
+    learning effort.
+    We decided to limit the scope of the project to those trials that involved drugs as interventions, and to further
+    limit our data set to 5 the five drugs that are currently seen to show the most promise:
+    Hydroxychloroquine (Plaquenil) and chloroquine (Aralen), Remdesivir, Favilavir, Lopinavir-ritonavir, Convalescent
+    plasma.
+
+    We pulled the eligibility and exclusion criteria from the current set of clinical trials that contained these drugs
+    in the clinical trial description and loaded them into the database.
+    We prepared the data using pandas to remove extra words and created a csv file of lines of eligibility and exclusion
+    criteris.
+    We experimented with several data preparation methods including - Latent Dirichlet, Bag of Words and others until
+    finally choosing Categorical Embedding.
+    With Categorical Embedding we were able to create a real very integer number encoding.
+    With neural networks, a hidden layer is located between the input and output of the algorithm, in which the function
+    applies weights to the inputs and directs them through an activation function as the output.
+    In short, the hidden layers perform nonlinear transformations of the inputs entered into the network. Our model used
+    two hidden layers.
+    We created a test group and trained the neural network. We then did a test and created a variety of visualizations
+    of the output.
+  </p>
+  <p>
+  <h4>Get the data</h4>
+  <p>
+    We decided to limit the scope of the project to those trials that involved drugs as interventions, and to further
+    limit our data set to 5 the five drugs that are currently seen to show the most promise:
+    Hydroxychloroquine (Plaquenil) and chloroquine (Aralen), Remdesivir, Favilavir, Lopinavir-ritonavir, Convalescent
+    plasma.
+
+    We pulled the eligibility and exclusion criteria from the current set of clinical trials that contained these drugs
+    in the clinical trial description and loaded them into the database.
+  </p>
+  <p>
+    <a><img src="../static/images/drugtrials.png"></a>
+  </p>
+  <p>
+  <h4>Clean, prepare, and manipulate the data</h4>
+  <p>We then cleaned the data, taking out extra words, and removing fields. Categorical emedding was used to encode the
+    eligibility and exclusion criteria. Further manipulation using pandas was done to create the final data set for the
+    neural network model.</p>
+
+  <p>
+    <a><img src="../static/images/cleancriteria.png"></a>
+  </p>
+  <p>
+    <a><img src="../static/images/ce.png"></a>
+  </p>
+  <p>
+    <a><img src="../static/images/transform.png"></a>
+  </p>
+  <p>
+  <h4>Train the model</h4>
+  <p>We chose a test set and then trained the model.</p>
+
+  <p>
+    <a><img src="../static/images/modeltrain.png"></a>
+  </p>
+  <p>
+    <a><img src="../static/images/training.png"></a>
+  </p>
+  <p>
+  <h4>Test the data</h4>
+  <p>We tested the model for accuracy.
+  </p>
+  <p>
+    <a><img src="../static/images/checkmodelaccuracy.png"><a>
+  </p>
+  <p>
+  <h4>Improve</h4>
+</div>
+</div>
+</div>
 
 
 
