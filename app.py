@@ -12,7 +12,7 @@ def index():
     engine = db.create_engine('sqlite:///COVID-Clinical-Trials.sqlite')
     #metadata = db.MetaData()
     connection = engine.connect()
-    query = connection.execute("SELECT DISTINCT c.nctid, c.brieftitle, c.facility, c.overallstatus, c.contactname, c.contactphone, c.contactemail, c.enrollmentcount, c.locationstate, l.latitude, l.longitude, p.phase FROM COVID_ClinicalTrials as c INNER JOIN lat_long as l on c.locationzip = l.locationzip INNER JOIN Phase_Recordings as p on c.nctid = p.nctid")
+    query = connection.execute("SELECT DISTINCT c.nctid, c.brieftitle, c.facility, c.briefsummary, c.overallstatus, c.leadsponsor, c.contactname, c.contactphone, c.contactemail, c.enrollmentcount, c.locationstate, l.latitude, l.longitude, p.phase FROM COVID_ClinicalTrials as c INNER JOIN lat_long as l on c.locationzip = l.locationzip INNER JOIN Phase_Recordings as p on c.nctid = p.nctid")
     plotquery = connection.execute("SELECT c.locationcountry, count(c.locationcountry) as count FROM COVID_ClinicalTrials as c GROUP BY c.locationcountry ORDER BY count DESC")
     plotquery2 = connection.execute("SELECT p.phase, count(p.phase) as count FROM Phase_Recordings as p GROUP BY p.phase ORDER BY p.phase")
 
